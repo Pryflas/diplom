@@ -13,6 +13,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, BatchNormalization, Input
 from tensorflow.keras.callbacks import EarlyStopping
 import shap
+from sklearn.utils import class_weight
+from tensorflow.keras.callbacks import ReduceLROnPlateau
 
 # === 1. ЗАГРУЗКА И ПОДГОТОВКА ДАННЫХ ===
 print("Загрузка данных...")
@@ -43,8 +45,7 @@ for column in X.select_dtypes(include=['object']).columns:
     label_encoders[column] = le
 joblib.dump(label_encoders, 'label_encoders.pkl')
 
-from sklearn.utils import class_weight
-from tensorflow.keras.callbacks import ReduceLROnPlateau
+
 
 # === 2. РАЗБИЕНИЕ И ПРЕДОБРАБОТКА ===
 print("Разбиение и нормализация данных...")
