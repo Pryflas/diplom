@@ -1,0 +1,646 @@
+я выполнил наши алгоритмы два раза, сначала для auc-roc, потом для pr_auc. Сравни их
+
+
+
+Вот результаты auc_roc
+
+Epoch 13/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 8ms/step - AUC: 0.8314 - f2_score: 0.2739 - loss: 0.5021 - pr_auc: 0.4268 - recall: 0.8032 - val_AUC: 0.8273 - val_f2_score: 0.2703 - val_loss: 0.5101 - val_pr_auc: 0.4274 - val_recall: 0.7842 - val_custom_score: 0.8014
+
+Epoch 14/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 7ms/step - AUC: 0.8317 - f2_score: 0.2731 - loss: 0.5010 - pr_auc: 0.4270 - recall: 0.8014 - val_AUC: 0.8266 - val_f2_score: 0.2749 - val_loss: 0.5002 - val_pr_auc: 0.4264 - val_recall: 0.7925 - val_custom_score: 0.8061
+
+Epoch 15/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 7ms/step - AUC: 0.8331 - f2_score: 0.2732 - loss: 0.4994 - pr_auc: 0.4311 - recall: 0.8016 - val_AUC: 0.8271 - val_f2_score: 0.2670 - val_loss: 0.5129 - val_pr_auc: 0.4279 - val_recall: 0.7759 - val_custom_score: 0.7964
+
+Epoch 16/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 8ms/step - AUC: 0.8332 - f2_score: 0.2721 - loss: 0.4986 - pr_auc: 0.4327 - recall: 0.8004 - val_AUC: 0.8271 - val_f2_score: 0.2770 - val_loss: 0.5140 - val_pr_auc: 0.4288 - val_recall: 0.8003 - val_custom_score: 0.8110
+
+Epoch 17/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 7ms/step - AUC: 0.8335 - f2_score: 0.2707 - loss: 0.4983 - pr_auc: 0.4328 - recall: 0.7982 - val_AUC: 0.8270 - val_f2_score: 0.2692 - val_loss: 0.5046 - val_pr_auc: 0.4278 - val_recall: 0.7842 - val_custom_score: 0.8013
+
+Epoch 18/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 8ms/step - AUC: 0.8338 - f2_score: 0.2712 - loss: 0.4985 - pr_auc: 0.4342 - recall: 0.8005 - val_AUC: 0.8262 - val_f2_score: 0.2702 - val_loss: 0.5213 - val_pr_auc: 0.4275 - val_recall: 0.7848 - val_custom_score: 0.8014
+
+
+
+Trial 90 Complete [00h 00m 51s]
+
+val_AUC: 0.8285784125328064
+
+
+
+Best val_AUC So Far: 0.8293710350990295
+
+Total elapsed time: 00h 33m 10s
+
+
+
+=== ВЫБРАННЫЕ ГИПЕРПАРАМЕТРЫ ===
+
+num_layers: 3
+
+units_0: 256
+
+batch_norm_0: False
+
+dropout_0: 0.1
+
+learning_rate: 0.01
+
+units_1: 128
+
+batch_norm_1: False
+
+dropout_1: 0.2
+
+units_2: 64
+
+batch_norm_2: True
+
+dropout_2: 0.5
+
+units_3: 32
+
+batch_norm_3: False
+
+dropout_3: 0.5
+
+tuner/epochs: 17
+
+tuner/initial_epoch: 6
+
+tuner/bracket: 2
+
+tuner/round: 1
+
+tuner/trial_id: 0058
+
+
+
+=== АРХИТЕКТУРА ЛУЧШЕЙ НЕЙРОСЕТИ ===
+
+Model: "sequential_1"
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+
+│ dense_5 (Dense)                      │ (None, 256)                 │           5,632 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_4 (Dropout)                  │ (None, 256)                 │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_6 (Dense)                      │ (None, 128)                 │          32,896 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_5 (Dropout)                  │ (None, 128)                 │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_7 (Dense)                      │ (None, 64)                  │           8,256 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ batch_normalization                  │ (None, 64)                  │             256 │
+
+│ (BatchNormalization)                 │                             │                 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_6 (Dropout)                  │ (None, 64)                  │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_8 (Dense)                      │ (None, 1)                   │              65 │
+
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+
+ Total params: 47,105 (184.00 KB)
+
+ Trainable params: 46,977 (183.50 KB)
+
+ Non-trainable params: 128 (512.00 B)
+
+
+
+Финальное обучение лучшей модели...
+
+Epoch 1/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 4s 8ms/step - AUC: 0.8146 - f2_score: 0.2786 - loss: 0.5256 - pr_auc: 0.3780 - recall: 0.7926 - val_AUC: 0.8269 - val_f2_score: 0.2722 - val_loss: 0.5668 - val_pr_auc: 0.4196 - val_recall: 0.7899 - learning_rate: 0.0100 - val_custom_score: 0.8047
+
+Epoch 2/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8243 - f2_score: 0.2755 - loss: 0.5105 - pr_auc: 0.4066 - recall: 0.7965 - val_AUC: 0.8272 - val_f2_score: 0.2752 - val_loss: 0.5338 - val_pr_auc: 0.4209 - val_recall: 0.7965 - learning_rate: 0.0100 - val_custom_score: 0.8088
+
+Epoch 3/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8258 - f2_score: 0.2767 - loss: 0.5091 - pr_auc: 0.4128 - recall: 0.8003 - val_AUC: 0.8278 - val_f2_score: 0.2783 - val_loss: 0.5140 - val_pr_auc: 0.4210 - val_recall: 0.8061 - learning_rate: 0.0100 - val_custom_score: 0.8148
+
+Epoch 4/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8261 - f2_score: 0.2780 - loss: 0.5080 - pr_auc: 0.4131 - recall: 0.8027 - val_AUC: 0.8278 - val_f2_score: 0.2778 - val_loss: 0.5076 - val_pr_auc: 0.4255 - val_recall: 0.8029 - learning_rate: 0.0100 - val_custom_score: 0.8129
+
+Epoch 5/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8263 - f2_score: 0.2769 - loss: 0.5080 - pr_auc: 0.4152 - recall: 0.8031 - val_AUC: 0.8274 - val_f2_score: 0.2662 - val_loss: 0.4898 - val_pr_auc: 0.4238 - val_recall: 0.7791 - learning_rate: 0.0100 - val_custom_score: 0.7985
+
+Epoch 6/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8274 - f2_score: 0.2766 - loss: 0.5070 - pr_auc: 0.4166 - recall: 0.8042 - val_AUC: 0.8273 - val_f2_score: 0.2891 - val_loss: 0.5479 - val_pr_auc: 0.4223 - val_recall: 0.8265 - learning_rate: 0.0100 - val_custom_score: 0.8268
+
+Epoch 7/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8275 - f2_score: 0.2773 - loss: 0.5067 - pr_auc: 0.4167 - recall: 0.8053 - val_AUC: 0.8280 - val_f2_score: 0.2813 - val_loss: 0.5179 - val_pr_auc: 0.4258 - val_recall: 0.8088 - learning_rate: 0.0100 - val_custom_score: 0.8165
+
+Epoch 8/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8280 - f2_score: 0.2780 - loss: 0.5056 - pr_auc: 0.4192 - recall: 0.8050 - val_AUC: 0.8281 - val_f2_score: 0.2650 - val_loss: 0.5071 - val_pr_auc: 0.4261 - val_recall: 0.7750 - learning_rate: 0.0100 - val_custom_score: 0.7962
+
+Epoch 9/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8284 - f2_score: 0.2764 - loss: 0.5058 - pr_auc: 0.4192 - recall: 0.8043 - val_AUC: 0.8286 - val_f2_score: 0.2776 - val_loss: 0.5349 - val_pr_auc: 0.4270 - val_recall: 0.8033 - learning_rate: 0.0100 - val_custom_score: 0.8134
+
+Epoch 10/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8284 - f2_score: 0.2783 - loss: 0.5057 - pr_auc: 0.4189 - recall: 0.8087 - val_AUC: 0.8286 - val_f2_score: 0.2543 - val_loss: 0.4782 - val_pr_auc: 0.4265 - val_recall: 0.7527 - learning_rate: 0.0100 - val_custom_score: 0.7831
+
+Epoch 11/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8289 - f2_score: 0.2768 - loss: 0.5048 - pr_auc: 0.4223 - recall: 0.8047 - val_AUC: 0.8292 - val_f2_score: 0.2895 - val_loss: 0.5245 - val_pr_auc: 0.4273 - val_recall: 0.8284 - learning_rate: 0.0100 - val_custom_score: 0.8287
+
+Epoch 12/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8291 - f2_score: 0.2777 - loss: 0.5042 - pr_auc: 0.4200 - recall: 0.8070 - val_AUC: 0.8277 - val_f2_score: 0.2692 - val_loss: 0.4923 - val_pr_auc: 0.4236 - val_recall: 0.7831 - learning_rate: 0.0100 - val_custom_score: 0.8010
+
+Epoch 13/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8296 - f2_score: 0.2787 - loss: 0.5038 - pr_auc: 0.4230 - recall: 0.8075 - val_AUC: 0.8284 - val_f2_score: 0.2876 - val_loss: 0.5394 - val_pr_auc: 0.4268 - val_recall: 0.8240 - learning_rate: 0.0100 - val_custom_score: 0.8258
+
+Epoch 14/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8299 - f2_score: 0.2759 - loss: 0.5039 - pr_auc: 0.4227 - recall: 0.8045 - val_AUC: 0.8286 - val_f2_score: 0.2935 - val_loss: 0.5502 - val_pr_auc: 0.4285 - val_recall: 0.8353 - learning_rate: 0.0100 - val_custom_score: 0.8326
+
+Epoch 15/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8298 - f2_score: 0.2784 - loss: 0.5037 - pr_auc: 0.4227 - recall: 0.8100 - val_AUC: 0.8285 - val_f2_score: 0.2783 - val_loss: 0.5164 - val_pr_auc: 0.4290 - val_recall: 0.8031 - learning_rate: 0.0100 - val_custom_score: 0.8133
+
+Epoch 16/100
+
+342/347 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step - AUC: 0.8303 - f2_score: 0.2749 - loss: 0.4996 - pr_auc: 0.4192 - recall: 0.8081  
+
+Epoch 16: ReduceLROnPlateau reducing learning rate to 0.0019999999552965165.
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8301 - f2_score: 0.2778 - loss: 0.5029 - pr_auc: 0.4226 - recall: 0.8104 - val_AUC: 0.8282 - val_f2_score: 0.2749 - val_loss: 0.4854 - val_pr_auc: 0.4277 - val_recall: 0.7950 - learning_rate: 0.0100 - val_custom_score: 0.8083
+
+Epoch 17/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8333 - f2_score: 0.2787 - loss: 0.4995 - pr_auc: 0.4304 - recall: 0.8146 - val_AUC: 0.8290 - val_f2_score: 0.2729 - val_loss: 0.4960 - val_pr_auc: 0.4293 - val_recall: 0.7944 - learning_rate: 0.0020 - val_custom_score: 0.8083
+
+Epoch 18/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8344 - f2_score: 0.2789 - loss: 0.4978 - pr_auc: 0.4350 - recall: 0.8166 - val_AUC: 0.8291 - val_f2_score: 0.2703 - val_loss: 0.5104 - val_pr_auc: 0.4297 - val_recall: 0.7882 - learning_rate: 0.0020 - val_custom_score: 0.8046
+
+Epoch 19/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 7ms/step - AUC: 0.8345 - f2_score: 0.2770 - loss: 0.4973 - pr_auc: 0.4356 - recall: 0.8122 - val_AUC: 0.8290 - val_f2_score: 0.2786 - val_loss: 0.5116 - val_pr_auc: 0.4297 - val_recall: 0.8078 - learning_rate: 0.0020 - val_custom_score: 0.8163
+
+Epoch 20/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8350 - f2_score: 0.2770 - loss: 0.4968 - pr_auc: 0.4354 - recall: 0.8129 - val_AUC: 0.8288 - val_f2_score: 0.2746 - val_loss: 0.5104 - val_pr_auc: 0.4295 - val_recall: 0.7993 - learning_rate: 0.0020 - val_custom_score: 0.8111
+
+Epoch 21/100
+
+343/347 ━━━━━━━━━━━━━━━━━━━━ 0s 6ms/step - AUC: 0.8370 - f2_score: 0.2734 - loss: 0.4933 - pr_auc: 0.4425 - recall: 0.8088 
+
+Epoch 21: ReduceLROnPlateau reducing learning rate to 0.0003999999724328518.
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 7ms/step - AUC: 0.8351 - f2_score: 0.2762 - loss: 0.4968 - pr_auc: 0.4367 - recall: 0.8119 - val_AUC: 0.8288 - val_f2_score: 0.2724 - val_loss: 0.5000 - val_pr_auc: 0.4287 - val_recall: 0.7939 - learning_rate: 0.0020 - val_custom_score: 0.8078
+
+
+
+Лучшая модель успешно обучена и сохранена!
+
+
+
+=== ОЦЕНКА НА ТЕСТОВОЙ ВЫБОРКЕ ===
+
+1190/1190 ━━━━━━━━━━━━━━━━━━━━ 1s 676us/step 
+
+ROC-AUC: 0.8296
+
+PR-AUC: 0.4259
+
+F2-Score: 0.6104
+
+
+
+Отчет о классификации (Порог 0.5):
+
+              precision    recall  f1-score   support
+
+
+
+ Нет диабета       0.96      0.67      0.79     32750
+
+      Диабет       0.29      0.84      0.43      5302
+
+
+
+    accuracy                           0.70     38052
+
+   macro avg       0.63      0.76      0.61     38052
+
+weighted avg       0.87      0.70      0.74     38052
+
+
+
+теперь данные с pr auc
+
+
+
+Epoch 46/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - AUC: 0.8270 - f2_score: 0.2770 - loss: 0.5060 - pr_auc: 0.4182 - recall: 0.8019 - val_AUC: 0.8281 - val_f2_score: 0.2780 - val_loss: 0.5155 - val_pr_auc: 0.4231 - val_recall: 0.8048 - val_custom_score: 0.8141
+
+Epoch 47/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - AUC: 0.8271 - f2_score: 0.2780 - loss: 0.5059 - pr_auc: 0.4170 - recall: 0.8044 - val_AUC: 0.8280 - val_f2_score: 0.2781 - val_loss: 0.5162 - val_pr_auc: 0.4228 - val_recall: 0.8055 - val_custom_score: 0.8145
+
+Epoch 48/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - AUC: 0.8271 - f2_score: 0.2777 - loss: 0.5059 - pr_auc: 0.4190 - recall: 0.8039 - val_AUC: 0.8282 - val_f2_score: 0.2771 - val_loss: 0.5133 - val_pr_auc: 0.4230 - val_recall: 0.8033 - val_custom_score: 0.8132
+
+Epoch 49/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - AUC: 0.8272 - f2_score: 0.2775 - loss: 0.5059 - pr_auc: 0.4202 - recall: 0.8009 - val_AUC: 0.8281 - val_f2_score: 0.2784 - val_loss: 0.5175 - val_pr_auc: 0.4231 - val_recall: 0.8063 - val_custom_score: 0.8150
+
+Epoch 50/50
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - AUC: 0.8272 - f2_score: 0.2773 - loss: 0.5055 - pr_auc: 0.4202 - recall: 0.8035 - val_AUC: 0.8280 - val_f2_score: 0.2779 - val_loss: 0.5173 - val_pr_auc: 0.4229 - val_recall: 0.8052 - val_custom_score: 0.8143
+
+
+
+Trial 90 Complete [00h 01m 53s]
+
+val_pr_auc: 0.4231078624725342
+
+
+
+Best val_pr_auc So Far: 0.42958471179008484
+
+Total elapsed time: 00h 38m 13s
+
+
+
+=== ВЫБРАННЫЕ ГИПЕРПАРАМЕТРЫ ===
+
+num_layers: 3
+
+units_0: 128
+
+batch_norm_0: True
+
+dropout_0: 0.30000000000000004
+
+learning_rate: 0.01
+
+units_1: 224
+
+batch_norm_1: False
+
+dropout_1: 0.5
+
+units_2: 160
+
+batch_norm_2: True
+
+dropout_2: 0.1
+
+units_3: 256
+
+batch_norm_3: False
+
+dropout_3: 0.4
+
+tuner/epochs: 50
+
+tuner/initial_epoch: 17
+
+tuner/bracket: 2
+
+tuner/round: 2
+
+tuner/trial_id: 0068
+
+
+
+=== АРХИТЕКТУРА ЛУЧШЕЙ НЕЙРОСЕТИ ===
+
+Model: "sequential_1"
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+
+│ dense_2 (Dense)                      │ (None, 128)                 │           2,816 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ batch_normalization_1                │ (None, 128)                 │             512 │
+
+│ (BatchNormalization)                 │                             │                 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_1 (Dropout)                  │ (None, 128)                 │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_3 (Dense)                      │ (None, 224)                 │          28,896 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_2 (Dropout)                  │ (None, 224)                 │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_4 (Dense)                      │ (None, 160)                 │          36,000 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ batch_normalization_2                │ (None, 160)                 │             640 │
+
+│ (BatchNormalization)                 │                             │                 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dropout_3 (Dropout)                  │ (None, 160)                 │               0 │
+
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+
+│ dense_5 (Dense)                      │ (None, 1)                   │             161 │
+
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+
+ Total params: 69,025 (269.63 KB)
+
+ Trainable params: 68,449 (267.38 KB)
+
+ Non-trainable params: 576 (2.25 KB)
+
+
+
+Финальное обучение лучшей модели...
+
+Epoch 1/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 5s 11ms/step - AUC: 0.8124 - f2_score: 0.2832 - loss: 0.5270 - pr_auc: 0.3767 - recall: 0.7989 - val_AUC: 0.8261 - val_f2_score: 0.2856 - val_loss: 0.5110 - val_pr_auc: 0.4181 - val_recall: 0.8161 - learning_rate: 0.0100 - val_custom_score: 0.8201
+
+Epoch 2/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8235 - f2_score: 0.2797 - loss: 0.5115 - pr_auc: 0.4072 - recall: 0.8054 - val_AUC: 0.8273 - val_f2_score: 0.2696 - val_loss: 0.5041 - val_pr_auc: 0.4203 - val_recall: 0.7857 - learning_rate: 0.0100 - val_custom_score: 0.8024
+
+Epoch 3/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8245 - f2_score: 0.2777 - loss: 0.5100 - pr_auc: 0.4096 - recall: 0.8026 - val_AUC: 0.8274 - val_f2_score: 0.2835 - val_loss: 0.5213 - val_pr_auc: 0.4214 - val_recall: 0.8165 - learning_rate: 0.0100 - val_custom_score: 0.8209
+
+Epoch 4/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8260 - f2_score: 0.2771 - loss: 0.5083 - pr_auc: 0.4141 - recall: 0.8025 - val_AUC: 0.8272 - val_f2_score: 0.2805 - val_loss: 0.5289 - val_pr_auc: 0.4224 - val_recall: 0.8086 - learning_rate: 0.0100 - val_custom_score: 0.8160
+
+Epoch 5/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8266 - f2_score: 0.2751 - loss: 0.5071 - pr_auc: 0.4157 - recall: 0.7995 - val_AUC: 0.8286 - val_f2_score: 0.2937 - val_loss: 0.5581 - val_pr_auc: 0.4241 - val_recall: 0.8380 - learning_rate: 0.0100 - val_custom_score: 0.8342
+
+Epoch 6/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8271 - f2_score: 0.2762 - loss: 0.5065 - pr_auc: 0.4163 - recall: 0.7992 - val_AUC: 0.8273 - val_f2_score: 0.2720 - val_loss: 0.5011 - val_pr_auc: 0.4226 - val_recall: 0.7891 - learning_rate: 0.0100 - val_custom_score: 0.8044
+
+Epoch 7/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8266 - f2_score: 0.2751 - loss: 0.5069 - pr_auc: 0.4155 - recall: 0.7983 - val_AUC: 0.8277 - val_f2_score: 0.2698 - val_loss: 0.5459 - val_pr_auc: 0.4243 - val_recall: 0.7867 - learning_rate: 0.0100 - val_custom_score: 0.8031
+
+Epoch 8/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8276 - f2_score: 0.2760 - loss: 0.5057 - pr_auc: 0.4190 - recall: 0.7991 - val_AUC: 0.8287 - val_f2_score: 0.2669 - val_loss: 0.5224 - val_pr_auc: 0.4264 - val_recall: 0.7791 - learning_rate: 0.0100 - val_custom_score: 0.7990
+
+Epoch 9/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8280 - f2_score: 0.2737 - loss: 0.5056 - pr_auc: 0.4207 - recall: 0.7973 - val_AUC: 0.8279 - val_f2_score: 0.2787 - val_loss: 0.5242 - val_pr_auc: 0.4238 - val_recall: 0.8055 - learning_rate: 0.0100 - val_custom_score: 0.8145
+
+Epoch 10/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8277 - f2_score: 0.2752 - loss: 0.5056 - pr_auc: 0.4191 - recall: 0.7996 - val_AUC: 0.8288 - val_f2_score: 0.2552 - val_loss: 0.4781 - val_pr_auc: 0.4280 - val_recall: 0.7565 - learning_rate: 0.0100 - val_custom_score: 0.7854
+
+Epoch 11/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8278 - f2_score: 0.2744 - loss: 0.5055 - pr_auc: 0.4204 - recall: 0.7980 - val_AUC: 0.8290 - val_f2_score: 0.2718 - val_loss: 0.4988 - val_pr_auc: 0.4286 - val_recall: 0.7923 - learning_rate: 0.0100 - val_custom_score: 0.8070
+
+Epoch 12/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8286 - f2_score: 0.2737 - loss: 0.5048 - pr_auc: 0.4203 - recall: 0.7974 - val_AUC: 0.8281 - val_f2_score: 0.2865 - val_loss: 0.5389 - val_pr_auc: 0.4265 - val_recall: 0.8220 - learning_rate: 0.0100 - val_custom_score: 0.8244
+
+Epoch 13/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8277 - f2_score: 0.2742 - loss: 0.5059 - pr_auc: 0.4188 - recall: 0.7996 - val_AUC: 0.8280 - val_f2_score: 0.2910 - val_loss: 0.5343 - val_pr_auc: 0.4258 - val_recall: 0.8306 - learning_rate: 0.0100 - val_custom_score: 0.8296
+
+Epoch 14/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8283 - f2_score: 0.2745 - loss: 0.5049 - pr_auc: 0.4217 - recall: 0.7983 - val_AUC: 0.8289 - val_f2_score: 0.2710 - val_loss: 0.5279 - val_pr_auc: 0.4266 - val_recall: 0.7906 - learning_rate: 0.0100 - val_custom_score: 0.8059
+
+Epoch 15/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8287 - f2_score: 0.2748 - loss: 0.5044 - pr_auc: 0.4211 - recall: 0.7984 - val_AUC: 0.8290 - val_f2_score: 0.2804 - val_loss: 0.5064 - val_pr_auc: 0.4291 - val_recall: 0.8106 - learning_rate: 0.0100 - val_custom_score: 0.8180
+
+Epoch 16/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8290 - f2_score: 0.2736 - loss: 0.5043 - pr_auc: 0.4229 - recall: 0.7962 - val_AUC: 0.8286 - val_f2_score: 0.2529 - val_loss: 0.4742 - val_pr_auc: 0.4281 - val_recall: 0.7510 - learning_rate: 0.0100 - val_custom_score: 0.7821
+
+Epoch 17/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8297 - f2_score: 0.2743 - loss: 0.5033 - pr_auc: 0.4218 - recall: 0.7989 - val_AUC: 0.8292 - val_f2_score: 0.2647 - val_loss: 0.4990 - val_pr_auc: 0.4275 - val_recall: 0.7774 - learning_rate: 0.0100 - val_custom_score: 0.7982
+
+Epoch 18/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8291 - f2_score: 0.2755 - loss: 0.5039 - pr_auc: 0.4224 - recall: 0.8030 - val_AUC: 0.8292 - val_f2_score: 0.2735 - val_loss: 0.5010 - val_pr_auc: 0.4275 - val_recall: 0.7986 - learning_rate: 0.0100 - val_custom_score: 0.8108
+
+Epoch 19/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8292 - f2_score: 0.2760 - loss: 0.5040 - pr_auc: 0.4212 - recall: 0.8025 - val_AUC: 0.8284 - val_f2_score: 0.2454 - val_loss: 0.4689 - val_pr_auc: 0.4267 - val_recall: 0.7276 - learning_rate: 0.0100 - val_custom_score: 0.7680
+
+Epoch 20/100
+
+344/347 ━━━━━━━━━━━━━━━━━━━━ 0s 8ms/step - AUC: 0.8283 - f2_score: 0.2754 - loss: 0.5048 - pr_auc: 0.4201 - recall: 0.7964  
+
+Epoch 20: ReduceLROnPlateau reducing learning rate to 0.0019999999552965165.
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8293 - f2_score: 0.2750 - loss: 0.5037 - pr_auc: 0.4241 - recall: 0.8002 - val_AUC: 0.8288 - val_f2_score: 0.2853 - val_loss: 0.5419 - val_pr_auc: 0.4277 - val_recall: 0.8206 - learning_rate: 0.0100 - val_custom_score: 0.8239
+
+Epoch 21/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8313 - f2_score: 0.2760 - loss: 0.5009 - pr_auc: 0.4275 - recall: 0.8047 - val_AUC: 0.8295 - val_f2_score: 0.2802 - val_loss: 0.5177 - val_pr_auc: 0.4289 - val_recall: 0.8114 - learning_rate: 0.0020 - val_custom_score: 0.8186
+
+Epoch 22/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8324 - f2_score: 0.2757 - loss: 0.4993 - pr_auc: 0.4326 - recall: 0.8072 - val_AUC: 0.8295 - val_f2_score: 0.2715 - val_loss: 0.5035 - val_pr_auc: 0.4293 - val_recall: 0.7933 - learning_rate: 0.0020 - val_custom_score: 0.8078
+
+Epoch 23/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8325 - f2_score: 0.2756 - loss: 0.4992 - pr_auc: 0.4304 - recall: 0.8056 - val_AUC: 0.8294 - val_f2_score: 0.2754 - val_loss: 0.5153 - val_pr_auc: 0.4291 - val_recall: 0.7993 - learning_rate: 0.0020 - val_custom_score: 0.8114
+
+Epoch 24/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8325 - f2_score: 0.2745 - loss: 0.4994 - pr_auc: 0.4313 - recall: 0.8027 - val_AUC: 0.8294 - val_f2_score: 0.2736 - val_loss: 0.5029 - val_pr_auc: 0.4288 - val_recall: 0.7974 - learning_rate: 0.0020 - val_custom_score: 0.8102
+
+Epoch 25/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8328 - f2_score: 0.2753 - loss: 0.4990 - pr_auc: 0.4318 - recall: 0.8065 - val_AUC: 0.8294 - val_f2_score: 0.2827 - val_loss: 0.5259 - val_pr_auc: 0.4285 - val_recall: 0.8169 - learning_rate: 0.0020 - val_custom_score: 0.8219
+
+Epoch 26/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8329 - f2_score: 0.2758 - loss: 0.4987 - pr_auc: 0.4315 - recall: 0.8056 - val_AUC: 0.8294 - val_f2_score: 0.2781 - val_loss: 0.5200 - val_pr_auc: 0.4285 - val_recall: 0.8065 - learning_rate: 0.0020 - val_custom_score: 0.8157
+
+Epoch 27/100
+
+342/347 ━━━━━━━━━━━━━━━━━━━━ 0s 8ms/step - AUC: 0.8346 - f2_score: 0.2768 - loss: 0.4966 - pr_auc: 0.4329 - recall: 0.8148  
+
+Epoch 27: ReduceLROnPlateau reducing learning rate to 0.0003999999724328518.
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8331 - f2_score: 0.2751 - loss: 0.4987 - pr_auc: 0.4330 - recall: 0.8057 - val_AUC: 0.8294 - val_f2_score: 0.2705 - val_loss: 0.5067 - val_pr_auc: 0.4288 - val_recall: 0.7918 - learning_rate: 0.0020 - val_custom_score: 0.8068
+
+Epoch 28/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8335 - f2_score: 0.2727 - loss: 0.4979 - pr_auc: 0.4334 - recall: 0.8004 - val_AUC: 0.8295 - val_f2_score: 0.2771 - val_loss: 0.5127 - val_pr_auc: 0.4288 - val_recall: 0.8044 - learning_rate: 4.0000e-04 - val_custom_score: 0.8144
+
+Epoch 29/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8339 - f2_score: 0.2750 - loss: 0.4975 - pr_auc: 0.4351 - recall: 0.8064 - val_AUC: 0.8295 - val_f2_score: 0.2768 - val_loss: 0.5157 - val_pr_auc: 0.4287 - val_recall: 0.8038 - learning_rate: 4.0000e-04 - val_custom_score: 0.8141
+
+Epoch 30/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8332 - f2_score: 0.2749 - loss: 0.4984 - pr_auc: 0.4333 - recall: 0.8052 - val_AUC: 0.8294 - val_f2_score: 0.2756 - val_loss: 0.5122 - val_pr_auc: 0.4286 - val_recall: 0.8008 - learning_rate: 4.0000e-04 - val_custom_score: 0.8123
+
+Epoch 31/100
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 9ms/step - AUC: 0.8331 - f2_score: 0.2748 - loss: 0.4987 - pr_auc: 0.4334 - recall: 0.8026 - val_AUC: 0.8294 - val_f2_score: 0.2742 - val_loss: 0.5098 - val_pr_auc: 0.4287 - val_recall: 0.7982 - learning_rate: 4.0000e-04 - val_custom_score: 0.8107
+
+Epoch 32/100
+
+344/347 ━━━━━━━━━━━━━━━━━━━━ 0s 8ms/step - AUC: 0.8370 - f2_score: 0.2731 - loss: 0.4938 - pr_auc: 0.4381 - recall: 0.8060  
+
+Epoch 32: ReduceLROnPlateau reducing learning rate to 7.999999215826393e-05.
+
+347/347 ━━━━━━━━━━━━━━━━━━━━ 3s 10ms/step - AUC: 0.8334 - f2_score: 0.2743 - loss: 0.4982 - pr_auc: 0.4331 - recall: 0.8045 - val_AUC: 0.8294 - val_f2_score: 0.2767 - val_loss: 0.5131 - val_pr_auc: 0.4289 - val_recall: 0.8025 - learning_rate: 4.0000e-04 - val_custom_score: 0.8133
+
+
+
+Лучшая модель успешно обучена и сохранена!
+
+
+
+=== ОЦЕНКА НА ТЕСТОВОЙ ВЫБОРКЕ ===
+
+1190/1190 ━━━━━━━━━━━━━━━━━━━━ 1s 712us/step 
+
+ROC-AUC: 0.8304
+
+PR-AUC: 0.4263
+
+F2-Score: 0.6058
+
+
+
+Отчет о классификации (Порог 0.5):
+
+              precision    recall  f1-score   support
+
+
+
+ Нет диабета       0.96      0.72      0.82     32750
+
+      Диабет       0.31      0.79      0.45      5302
+
+
+
+    accuracy                           0.73     38052
+
+   macro avg       0.63      0.75      0.63     38052
+
+weighted avg       0.87      0.73      0.77     38052
+
+
+
+(.venv) PS C:\dev_works\diplom\code\diabetes_binary_health_indicators_BRFSS2015> python .\evaluate_model_pr_auc.py
+
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+
+I0000 00:00:1778087807.657724   16068 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+
+I0000 00:00:1778087809.422061   16068 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+1. Подготовка тестовых данных...
+
+2. Загрузка обработчиков и применение к тестовой выборке...
+
+3. Загрузка сохраненной нейросети...
+
+I0000 00:00:1778087810.308063   16068 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+
+4. Выполнение предсказаний на тестовой выборке...
+
+1190/1190 ━━━━━━━━━━━━━━━━━━━━ 1s 698us/step 
+
+
+
+Поиск идеального порога для максимизации F2-score...
+
+Идеальный порог: 0.46
+
+Максимальный F2-score при этом пороге: 0.6104
+
+График 'threshold_optimization_pr_auc.png' успешно сохранен!
+
+
+
+=== ФИНАЛЬНЫЙ ОТЧЕТ О КЛАССИФИКАЦИИ (ПОРОГ 0.46) ===
+
+              precision    recall  f1-score   support
+
+
+
+ Нет диабета       0.96      0.67      0.79     32750
+
+      Диабет       0.29      0.84      0.43      5302
+
+
+
+    accuracy                           0.70     38052
+
+   macro avg       0.63      0.76      0.61     38052
+
+weighted avg       0.87      0.70      0.74     38052
+
+
+
